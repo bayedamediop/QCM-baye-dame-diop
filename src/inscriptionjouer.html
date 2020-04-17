@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../asset/css/jouer.css">
+</head>
+<body>
+    <form action="indexe.php" method="POST" >
+    <div class="row rows">
+        <p class="p">Le plaisir de jouer</p>
+        <img src="../asset/Images/logo-QuizzSA.png" alt="" class="img">
+    </div>
+    <br>
+    
+    <div class="row row1">
+        <div class="top">
+            
+     <h1 class="h1">S’INSCRIRE</h1 >
+
+
+  
+    <label for="prenom">PRENOM</label>
+    <input type="text" id="prenom" name="prenom" placeholder="Entre votre prenom..">
+    <br><span id="prenom_erreur"></span><br>
+
+    <label for="nom">NOM</label>
+    <input type="text" id="nom" name="nom" placeholder="Entre votre nom..">
+    <br><span id="nom_erreur"></span><br>
+    <label for="login">LOGIN</label>
+    <input type="text" id="login" name="login" placeholder="Entre votre login..">
+    <br><span id="login_erreur"></span><br>
+    <label for="pwd">PASSWORD</label>
+    <input type="password" id="pwd" name="pwd" placeholder="Entre votre password..">
+    <br><span id="pwd_erreur"></span><br>
+    <label for="pwdc">CONFIRME PASSWORD</label>
+    <input type="password" id="pwdc" name="pwdc" placeholder="Cofirmer votre password..">
+    <br><span id="pwdc_erreur"></span><br>
+    <h2>Avatar</h2>    <button type="file" id="file" class="file">Choisir un fichie</button><br>
+    <br><span id="file_erreur"></span><br>
+        <select name="type" id="type" id="type">
+            <option value="Admin">Admin</option>
+            <option value="jeux">jouer</option>
+        </select>
+        <br><span id="type_erreur"></span><br>
+    <button type="submit" class="submit" id="btn_valider">Créer compte </button>
+        </div>
+        <div class="tops">  
+         <img src="images/img13.jpg" alt="" class="img1">
+        </div>
+    </div>
+    <script>
+        // recuperration par ID du input nom
+        var nom = document.getElementById('nom');
+        var nom_erreur = document.getElementById('nom_erreur');
+        // recuperration par ID du input prenom
+        var prenom = document.getElementById('prenom');
+        var prenom_erreur = document.getElementById('prenom_erreur');
+
+        // recuperration par ID du input login
+        var login= document.getElementById('login');
+        var login_erreur = document.getElementById('login_erreur');
+
+         // recuperration par ID du input password
+         var pwd= document.getElementById('pwd');
+        var pwd_erreur = document.getElementById('pwd_erreur');
+             // recuperration par ID du input password de confirmation
+         var pwdc= document.getElementById('pwdc');
+        var pwdc_erreur = document.getElementById('pwdc_erreur');
+         // recuperration par ID du input image
+         var file= document.getElementById('file');
+        var file_erreur = document.getElementById('file_erreur');
+         // recuperration par ID du input password
+         var type= document.getElementById('type');
+        var type_erreur = document.getElementById('type_erreur');
+
+
+
+        // recuperration par ID du input submit (c-a-d le bouton valider)
+        var btn_valider = document.getElementById('btn_valider');
+
+        // ecoute du bouton si on a clicke ou pas 
+        btn_valider.addEventListener('click',fomrValide);
+
+        // ----------------------------------------- Pour nos futures variables
+        
+        // ----------------------------------------- Fin des futures variabbles
+
+        
+
+        // fonctions qui verifie si nos champ son valide ou pas 
+        function fomrValide(e){
+            alert('Bonjour');
+        }
+  </script>
+</body>
+</html>

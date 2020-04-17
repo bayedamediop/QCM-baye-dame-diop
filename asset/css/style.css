@@ -1,0 +1,78 @@
+
+.btnPopup{
+   
+    background-color: black;
+    padding: 1em 2em;
+    border: 0 ;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+    float: right ;
+    margin-top: -100px;
+}
+.btnPopup :hover{
+    background-color: teal;
+}
+   
+.overlay{
+   
+    background-color:whitesmoke;
+    margin-top: -49px;
+    display: none;
+}
+.row{
+    background-color:whitesmoke;
+    width: 70%;
+    margin-left: 400px;
+}
+.p1{
+    background-color: rgb(55, 227, 233);
+    width: 100%;
+    margin-top: -190px;
+   
+    height: 90px;
+}
+h2{
+    margin-top: -200px;
+}
+.top{
+    background-color: teal;
+    
+}
+.popup{
+    margin: 20% auto;
+    width: 70%;
+    border-radius: 5px;
+    
+    padding: 1em;
+}
+.btnClose{
+    float: right;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 40px;
+    height: 30px;
+    float: right;
+    font-size: 80px;
+}
+input[type=text], select{
+    width: 90%;
+    padding: 20px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 55px;
+  }
+  input[type=password]{
+    width: 90%;
+    padding: 20px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 55px;
+    
+  }

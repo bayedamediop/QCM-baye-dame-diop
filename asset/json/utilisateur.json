@@ -1,0 +1,18 @@
+[
+    {"prenom":"diopkoki",
+        "nom":"diop",
+        "login":"diopkoki",
+        "pwd":"diop",
+        "pwdc":"diop",
+        "file":"../asset/images/diop1.png",
+        "profil":"admin"
+    },
+    {"prenom":"diopkoki",
+        "nom":"lo",
+        "login":"dame",
+        "pwd":"123",
+        "pwdc":"diop",
+        "file":"../asset/images/diop.png",
+        "profil":"jeux"
+    }
+]

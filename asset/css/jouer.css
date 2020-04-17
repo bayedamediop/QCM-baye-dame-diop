@@ -1,0 +1,130 @@
+body{
+    background-image: url(images/img-bg.jpg);
+}
+.p{
+    text-align: center;
+    padding: 10px;
+}
+.h1{
+    border-bottom: 0px 0px 0px 10px;
+}
+.img{
+ width: 60px;
+ margin-top: -112px !important;
+ float: left;
+}
+.rows{
+    background-color: black;
+    width: 100%;
+    height: 87px;
+    color: white;
+    font-size: 39px;
+    margin-top: -40px;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  input[type=text], select ,password{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .row1 {
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    width: 85%;
+    margin-left: 100px;
+    border-radius: 18px;
+    float: left;
+  }
+  .row1 .top{
+      float: left;
+      width: 60%;
+  }
+  .submit{
+      background-color: teal;
+      color: white;
+      width: 180px;
+      height: 50px;
+      border: 0;
+      border-radius: 3px;
+      margin: 80px;
+      font-size: 25px;
+      margin-top: 10px;
+      margin-left: 200px;
+  }
+  .tops{
+      float: right;
+      margin: 85px;
+      border: 6px solid teal;
+      border-radius: 300px;
+      width: 25%; 
+  }
+  .img1{
+    border-radius: 370px;
+    width: 100%;
+    margin-top: -900px !important ;
+  }
+  .file{
+    background-color: teal;
+    color: white;
+    width: 230px;
+    height: 50px;
+    float: right;
+    border: 0;
+    border-radius: 3px;
+   margin-top: -30px;
+    font-size: 25px;
+  }
