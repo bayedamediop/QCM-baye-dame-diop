@@ -1,20 +1,36 @@
 
 <?php 
 require_once('function.php');
- session_start();
+//  session_start();
  $nouveau=[];
  if (isset($_POST['submit'])){
-
+// var_dump($_POST);
    $qustion=$_POST['question'];
    $score=$_POST['score'];
    $type=$_POST['type'];
-   $reponse=$_POST['reponse'];
+   $nbr_reponse=$_POST['reponse'];
+   $reponse=$_POST['rep'];
+   $vrais=$_POST['vrais'];
    $nouveauQuestion=[
        'Question'=>$qustion,
        'Score'=>$score,
-       'Type de question'=>$type,
-       'Nbr de reponse'=>$reponse,
+       'type'=>$type,
+       'Nbr de reponse'=>$nbr_reponse,
+       'Reponse'=>$reponse,
+        'Varais'=>$vrais
+      
    ];
+  // echo '<br>';
+  //    $vrais=$nouveauQuestion['vrais'];
+  //   if($nouveauQuestion['type'] == 'choixmultiple'){
+  //     for ($i=0; $i < count($nouveauQuestion['rep']); $i++) { 
+  //       $nouveauQuestion['rep'][$i]=[
+  //           "rep"=> $nouveauQuestion['rep'][$i],
+  //           "vrais"=> $vrais[$i]
+  //       ];
+  //   }
+  //   unset($nouveauQuestion['vrais']);
+  //   }
             $json=file_get_contents('../asset/json/question.json');
           $nouveau=json_decode($json,true);
             $nouveau[]=$nouveauQuestion;
@@ -32,17 +48,17 @@ require_once('function.php');
 //  }
 //  if (isset($_POST)) {
 //    unset($_POST['submit']);
-//    $question = $_POST;
-//     $vrais=$question['vrais'];
-//     if($question['type'] == 'choixmultiple'){
-//       for ($i=0; $i < count($question['rep']); $i++) { 
-//         $question['rep'][$i]=[
-//             "rep"=> $question['rep'][$i],
-//             "vrais"=> $vrais[$i]
-//         ];
-//     }
-//     unset($question['vrais']);
-//     }
+  //  $question = $_POST;
+  //   $vrais=$nouveauQuestion['vrais'];
+  //   if($nouveauQuestion['type'] == 'choixmultiple'){
+  //     for ($i=0; $i < count($nouveauQuestion['rep']); $i++) { 
+  //       $nouveauQuestion['rep'][$i]=[
+  //           "rep"=> $nouveauQuestion['rep'][$i],
+  //           "vrais"=> $vrais[$i]
+  //       ];
+  //   }
+  //   unset($nouveauQuestion['vrais']);
+  //   }
    
 //   $questions[]=$question;
 //  }
@@ -100,6 +116,7 @@ require_once('function.php');
     <div class="row" id="row">
       <div class="col-25">
         <label for="reponse">NBRE <BR>REPONSE</label>
+        
       </div>
       <div class="col-75">
         <input type="text" id="reponse" name="reponse" onkeyup="genere();">
@@ -111,7 +128,7 @@ require_once('function.php');
                 <div id="choix" class="col-75">
                 </div>
           </div>
-          <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+          <!-- <textarea name="" id="" cols="30" cols="30"></textarea> -->
 
          <div class="row">
                     <input type="submit" name="submit" value="Submit">
@@ -128,14 +145,16 @@ require_once('function.php');
               { var newInput= document.createElement("input");
                newInput.setAttribute('type','textarea');
                newInput.setAttribute('placeholder', 'REPONSE');
+               newInput.setAttribute('name','rep[""]');
                newInput.setAttribute('name','vrais');
                choix.appendChild(newInput);
-               newInput.style.width="85%";
-               newInput2.style.height="10%";
+              //  newInput.style.cols="30";
+              //  newInput2.style.row="200px";
                
                document.getElementById ("row").style.display="none";
               }
              });
+
              function genere(){
                
              var choix=document.getElementById ("choix");
@@ -184,10 +203,18 @@ require_once('function.php');
                choix.appendChild(newInput2);          
               }
               }
-              if(typ=="choixtext"){
-               alert(typ=="choixtext");
+              // if(typ=="choixtext"){
+              //   var newInput= document.createElement("input");
+              //  var newInput= document.createElement('type','textarea');
+              //  newInput.setAttribute('type','textarea');
+              //  newInput.setAttribute('placeholder', 'REPONSE');
+              //  newInput.setAttribute('name','rep[]=""');
+              //  newInput.setAttribute('name','vrais');
+              //  choix.appendChild(newInput);
+              //  newInput.style.width="85%";
+              //  newInput2.style.row="200px";
                         
-              }
+              // }
             }
             
            </script>     

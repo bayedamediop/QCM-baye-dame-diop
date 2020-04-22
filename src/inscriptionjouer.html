@@ -1,3 +1,27 @@
+<?php
+require_once('function.php');
+ session_start();
+ $nouveau=[];
+ if (isset($_POST['submit'])){
+
+   $qustion=$_POST['question'];
+   $score=$_POST['score'];
+   $type=$_POST['type'];
+   $reponse=$_POST['reponse'];
+   $nouveauQuestion=[
+       'Question'=>$qustion,
+       'Score'=>$score,
+       'Type de question'=>$type,
+       'Nbr de reponse'=>$reponse,
+   ];
+            $json=file_get_contents('../asset/json/question.json');
+          $nouveau=json_decode($json,true);
+            $nouveau[]=$nouveauQuestion;
+            $nouveauEncode=json_encode($nouveau);
+            file_put_contents('../asset/json/question.json',$nouveauEncode);
+   
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +42,6 @@
         <div class="top">
             
      <h1 class="h1">S’INSCRIRE</h1 >
-
-
-  
     <label for="prenom">PRENOM</label>
     <input type="text" id="prenom" name="prenom" placeholder="Entre votre prenom..">
     <br><span id="prenom_erreur"></span><br>
@@ -39,16 +60,12 @@
     <br><span id="pwdc_erreur"></span><br>
     <h2>Avatar</h2>    <button type="file" id="file" class="file">Choisir un fichie</button><br>
     <br><span id="file_erreur"></span><br>
-        <select name="type" id="type" id="type">
-            <option value="Admin">Admin</option>
-            <option value="jeux">jouer</option>
-        </select>
-        <br><span id="type_erreur"></span><br>
+    <input type="hidden" id="profile" name="profile" value="jeux"  >
     <button type="submit" class="submit" id="btn_valider">Créer compte </button>
         </div>
-        <div class="tops">  
+        <!-- <div class="tops">  
          <img src="images/img13.jpg" alt="" class="img1">
-        </div>
+        </div> -->
     </div>
     <script>
         // recuperration par ID du input nom

@@ -21,7 +21,7 @@
 .content{
     height: 600px;
     width: 95%;
-   
+   background-color: #f8fdfd;
     margin-left: 43px;
     float: left;
 }
@@ -65,7 +65,7 @@
 .centenue .cont{
     float: left;
     width: 40%;
-    background-color: rgb(197, 241, 241);
+    background-color:#97d8e2;
     margin: 0.5% 0.5% 0.5% 0.5% ;
     height: 150px;
 }
@@ -77,18 +77,18 @@
    height: 150px;
 }
 .conte .logo{
-    background-color: rgb(123, 214, 214);
-    width: 100px;
+    background-color: #51bfd0;
+    width: 97px;
     border-radius: 100%;
     height: 100px;
    
     margin-left: 100px;
 }
 .centenue .cont .conte1{
-    background-color: rgb(249, 245, 252);
-   width: 95%;
+    background-color: rgb(255, 255, 255);
+   width: 96%;
    float: left;
-   margin-left: 20px;
+   margin-left: 10px;
 }
 .centenue .cont .conte1 a {
   text-decoration: none;
@@ -96,19 +96,22 @@
    margin-top: 40px;
    margin: 19px;
 }
-.centenue .cont .conte1 .d1 {
-     float: right;
-  }
+/* .centenue .cont .conte1 .d1 {
+     /* float: right; */
+  */
   .centenue .cont .conte1 a {
     text-decoration: none;
     font-size: 20px;
   }
 .centenue .contt{
     float: left;
-    width: 55%;
-    background-color: rgb(209, 9, 9);
+    width: 56%;
+    background-color: #ffffff;
     margin: 0.5% 0.5% 0.5% 0.5% ;
-    height: 100px;
+    height: 460px;
+    border-radius: 10px ;
+    
+    
 }
 
 .contee{

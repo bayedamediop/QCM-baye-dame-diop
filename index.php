@@ -4,30 +4,21 @@ require_once('src/function.php');
 
 $_SESSION['user'] = [];
 if(isset($_POST['btn'])){
-    
-    // var_dump  ($_POST);
+  
         $login=$_POST['login'];
         $pwd=$_POST['pwd'];
   $result=connection($login,$pwd);
 
     if($result=="admin"){
         $_SESSION['user']=user($login,$pwd);
-        // var_dump($_SESSION['user']);
+       
        header("location:src/admin.php");
     } 
     if($result=="jeux"){
         $_SESSION['user']=user($login,$pwd);
         header("location:src/jeux.php");
      }
-     
-     
-
 }
-//    }else{
-//       if(isset($_GET['statut']) && isset($_GET['statut'])==="logout"){
-//         deconnection();
-//       }
-//    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,17 +42,20 @@ if(isset($_POST['btn'])){
     <div id="overlay" class="overlay">
         
         <div id="popup" class="popup"></div><div class="p1">  
-        <h2 class="h2"> Login Form <span id="btnClose" class="btnClose">&times; </span> 
-        </h2>
+        <h2 class="h2"> Login Form <span id="btnClose" class="btnClose">&times; </span> </h2>
+        <br><span id="login_erreur"></span><br>
+
+        
     </div>
     <form  method="POST" action="" id="form-connection" >
         
          <input type="text" name="login" id="login" error="login_m" placeholder="Login">
-        <span id="login_m">*</span>
-         <input type="password"  name="pwd" error="pwd"placeholder="Password">
-         <span id="pwd">*</span>
-         <button type="submit" name="btn" id="btn" class="btn">Connection</button>
-            <a href="src/inscriptionjouer.html">S’inscrire pour jouer ?</a>
+         <br><span id="login_erreur"></span><br>
+
+         <input type="password"  name="pwd" id="pwd" error="pwd"placeholder="Password">
+        <br> <span id="pwd_erreur"></span><br>
+         <button type="submit" name="btn" id="btn_valider" class="btn">Connection</button>
+            <a href="src/inscription.php">S’inscrire pour jouer ?</a>
     </div>
 </div> 
 </form>
@@ -70,21 +64,29 @@ if(isset($_POST['btn'])){
     
 </script>
 <script>
-     document.getElementById("form-connection").addEventListener("submit",function(e){
-       const inputs= document.getElementsByIdTagName("input");
-       var error=false;
-       for (input of inputs) {
-           if(!input.value){
-               alert('oki');
-               errot=true;
-           }
-           
-       }
+            var btn_valider = document.getElementById('btn_valider');
 
-        e.preventDifault();
-    // alert('oki');
-})
-</script>
+            // ecoute du bouton si on a clicke ou pas 
+            btn_valider.addEventListener('click',fomrValide);
+            var login = document.getElementById('login');
+            var login_erreur = document.getElementById('login_erreur');
+
+            // recuperration par ID du input prenom
+            var pwd = document.getElementById('pwd');
+            var pwd_erreur = document.getElementById('pwd_erreur');
+ // fonctions qui verifie si nos champ son valide ou pas 
+            function fomrValide(e){
+                if(login.value==""){
+                    e.preventDefault();
+                    login_erreur.innerHTML="Vous n'est pas saisie le champ de login!!!!";
+                    login_erreur.style.color="red";
+                }if(pwd.value==""){
+                    e.preventDefault();
+                    pwd_erreur.innerHTML="Vous n'est pas saisie le champ de password!!!!";
+                    pwd_erreur.style.color="red";
+                }
+            }
+      </script>
 </body>
 </html>
 <?php

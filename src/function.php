@@ -9,16 +9,46 @@ for ($i=0; $i < count($json); $i++) {
    
    if($json[$i]['login']===$login && $json[$i]['pwd']===$pwd){
        $_SESSION['statut']="login";
-       if($json[$i]['profil']==="admin"){
+       if($json[$i]['profile']==="admin"){
         return "admin";
         return $json[$i];
-       }elseif($json[$i]['profil']==="jeux"){
+       }elseif($json[$i]['profile']==="jeux"){
         return "jeux";
         return $json[$i];
        }
     }
+  
 }
 }
+
+// liste de joueure
+function listJoueure(){
+    $json=file_get_contents('../asset/json/utilisateur.json');
+    $json=json_decode($json,true);
+    $liste=[];
+    for ($i=0; $i < count($json); $i++) {         
+      if($json[$i]['profile']=='jeux'){
+         $liste[]= $json[$i];
+      }
+         
+    }
+    return $liste;
+}
+//verifier is password existe da le fichier json oupas
+function doublon($pwd){
+    $json=file_get_contents('../asset/json/utilisateur.json');
+    $json=json_decode($json,true);
+        $ok=false;
+    for ($i=0; $i < count($json); $i++) { 
+       if(($json[$i]['pwd']==$pwd)){
+        $ok=true;
+           
+    }
+        }
+        return $ok;
+      
+    }
+    
 function user($login,$pwd){
     $json=file_get_contents('./asset/json/utilisateur.json');
     $json=json_decode($json,true);

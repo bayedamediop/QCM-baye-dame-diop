@@ -3,14 +3,6 @@ session_start ();
 // session_destroy ();
 $p=isset($_GET['p'])?$_GET['p']:"";
 
-// var_dump($_SESSION['user']['file']); 
-// echo '<img  class="logo" src=" ' . $_SESSION['user']['file'] . '" >';
-  // var_dump($_POST);
-     
-
-
-// echo $_SESSION['json']['prenom'];
-// echo $_SESSION['json']['nom'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,13 +41,16 @@ $p=isset($_GET['p'])?$_GET['p']:"";
              </div>
              <div class="conte1">
               
-            <a href=" ?p=liste_qustion" class="conte1" id="conte1">Liste Questions </a><img src="../asset/images/Icônes/ic-liste.png" alt="" class="d1"></li>
-         <a href=" ?p=inscription" class="conte1" id="conte1" >Creer Admin</a><img src="../asset/images/Icônes/ic-ajout.png" alt="" class="d1"></li>
+            <a href=" ?p=liste_qustion" class="conte1" id="conte1">Liste Questions </a><img src="../asset/images/Icônes/ic-liste.png" alt="" class=""></li>
+         <a href=" ?p=inscrireAdmin" class="conte1" id="conte1" >Creer Admin</a><img src="../asset/images/Icônes/ic-ajout.png" alt="" class="d1"></li>
             <a href=" ?p=liste_joueuer" class="conte1" id="conte1" >Liste joueurs</a><img src="../asset/images/Icônes/ic-liste.png" alt="" class="d1"></li>
             <a href=" ?p=creer_qustion" class="conte1"id="conte1" >Creer Questions</a><img src="../asset/images/Icônes/ic-ajout.png" alt="" class="d1"></li>
              </div>
            </div>
            <div class="contt" id="contt">
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi reiciendis 
+             laudantium expedita repellendus mollitia, nulla repellat 
+             pariatur officiis a aliquam, natus, voluptatem ab fuga deleniti corrupti ullam enim vel nam.
            </div>       
      </div>
 </body>
