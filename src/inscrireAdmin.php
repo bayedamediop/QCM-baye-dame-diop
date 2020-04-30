@@ -10,7 +10,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head class="body">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -18,31 +18,33 @@
 </head>
 <body>
     <form action="" method="POST" id="myform" enctype="multipart/form-data" >
-    
+    <div class="generale">
     <div class="row row1">
         <div class="top">    
      <h1 class="h1">S’INSCRIRE</h1 >
      <h4>Pour proposer des quizz</h4>
     <label for="prenom">PRENOM </label>
     <input type="text" id="prenom" name="prenom" error="erreur-1" placeholder="Entre votre prenom..">
-    <br> <span id="prenom_erreur"></span><br>
+     <span id="prenom_erreur"></span>
     <label for="nom">NOM</label>
     <input type="text" id="nom" name="nom"  error="erreur-2" placeholder="Entre votre nom..">
-    <br> <span id="nom_erreur"></span><br>
+    <span id="nom_erreur"></span>
     <label for="login">LOGIN</label>
     <input type="text" id="login" name="login" placeholder="Entre votre login..">
-   <br> <span id="login_erreur"></span><br>
+   <span id="login_erreur"></span>
     <label for="pwd">PASSWORD</label>
     <input type="password" id="pwd" name="pwd" placeholder="Entre votre password..">
-   <br> <span id="pwd_erreur"></span><br>
+    <span id="pwd_erreur"></span>
     <label for="pwdc">CONFIRME PASSWORD</label>
     <input type="password" id="pwdc" name="pwdc" placeholder="Cofirmer votre password..">
-   <br> <span id="pwdc_erreur"></span><br>
-    <h2>Avatar</h2>    
+    <span id="pwdc_erreur"></span><br>
+    <br>
+    <label for="file">Avatar</label>   
     <input type="file" id="file" class="file" name="file">
     <span id="file_erreur"></span>
     <input type="hidden" id="profile" name="profile" value="admin"  > 
     <button type="submit" class="submit" id="bt_valider" name="submit">Créer compte </button>
+</div>
 </div>
 </div>
      </form>

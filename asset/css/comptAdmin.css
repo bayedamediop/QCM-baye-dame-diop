@@ -109,9 +109,15 @@
     background-color: #ffffff;
     margin: 0.5% 0.5% 0.5% 0.5% ;
     height: 460px;
-    border-radius: 10px ;
-    
-    
+    border-radius: 10px ;    
+}
+.contt .menu{
+    float: left;
+    width: 56%;
+    background-color: #d12a2a;
+    margin: 0.5% 0.5% 0.5% 0.5% ;
+    height: 460px;
+    border-radius: 10px ;    
 }
 
 .contee{

@@ -1,9 +1,10 @@
 [
     {"Question":"blond'or d'affrique 2019","Score":"3","type":"choixmultiple","Nbr de reponse":"3","Reponse":["reffs","scfdvfc",""]},
+    {"Question":"c'est quoi lamgage de css","Score":"5","type":"choixtext","Nbr de reponse":"","Reponse":"null","Varais":"CSS est un langaes de de designr"},
     {"Question":"les langaged de progrrammations","Score":"4","type":"choixmultiple","Nbr de reponse":"4","Reponse":["pahp","java scrip","diop","c#"],"Varais":["on","on","on","off"]},
     {"Question":"blond'or d'orope 2019","Score":"3","type":"choixsimple","Nbr de reponse":"3","Reponse":["sadio mane","c ronaldo","messi"],"Varais":["off","on","off"]},
     {"Question":"trehueytefefuuvtf","Score":"4","type":"choixsimple","Nbr de reponse":"3","Reponse":null,"Varais":"1"},
-    {"Question":"c'est quoi informatique","Score":"","type":"choixsimple","Nbr de reponse":"4","Reponse":null,"Varais":"L'informatique est la science du traitement des informations avec des moyens électroniques. Elle est conçue pour servir les humains. Elle s'occupe d'enregistrer,stocker, traiter, organiser, transférer et présenter les informations sous une forme utilisable."},
+    {"Question":"c'est quoi informatique","Score":"","type":"choixtext","Nbr de reponse":"4","Reponse":[""],"Varais":"L'informatique est la science du traitement des informations avec des moyens électroniques. Elle est conçue pour servir les humains. Elle s'occupe d'enregistrer,stocker, traiter, organiser, transférer et présenter les informations sous une forme utilisable."},
     {"Question":"les composants de l'ordinateur","Score":"6","type":"choixsimple","Nbr de reponse":"4","Reponse":["materielle","logiciele","ecran","uc"],"Varais":["on","on","off","off"]}
     ,
-    {"Question":"c'est quoi php","Score":"5","type":"choixtext","Nbr de reponse":"","Reponse":null,"Varais":"php estun la langaes de scripe"}]
+    {"Question":"c'est quoi php","Score":"5","type":"choixtext","Nbr de reponse":"","Reponse":["php estun la langaes de scripe"],"Varais":"php estun la langaes de scripe"}]

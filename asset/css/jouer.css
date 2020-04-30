@@ -1,13 +1,12 @@
 body{
     background-image: url(images/img-bg.jpg);
 }
+
 .p{
     text-align: center;
     padding: 10px;
 }
-.h1{
-    border-bottom: 0px 0px 0px 10px;
-}
+
 .img{
  width: 60px;
  margin-top: -112px !important;
@@ -15,8 +14,8 @@ body{
 }
 .rows{
     background-color: black;
-    width: 100%;
-    height: 87px;
+    /* width: 100%;
+    height: 50px; */
     color: white;
     font-size: 39px;
     margin-top: -40px;
@@ -48,7 +47,7 @@ input[type=text], select {
   
   input[type=text], select ,password{
     width: 100%;
-    padding: 12px 20px;
+    padding: 5px 10px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -58,7 +57,8 @@ input[type=text], select {
   input[type=password]{
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    /* margin: 8px 0; */
+    padding: 5px 10px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -83,11 +83,11 @@ input[type=text], select {
   .row1 {
     border-radius: 5px;
     background-color: white;
-    padding: 20px;
-    width: 85%;
+    /* padding: 2px; */
+    /* width: %; */
     margin-left: 100px;
     border-radius: 18px;
-    float: left;
+    /* float: left; */
   }
   .row1 .top{
       float: left;
@@ -98,17 +98,17 @@ input[type=text], select {
       background-color: teal;
       color: white;
       width: 180px;
-      height: 50px;
+      /* height: 10px; */
       border: 0;
       border-radius: 3px;
-      margin: 80px;
+      /* margin: 80px; */
       font-size: 25px;
-      margin-top: 10px;
-      margin-left: 200px;
+      
+      margin-left: 110px;
   }
   .tops{
       float: right;
-      margin: 85px;
+      margin: 35px;
       border: 6px solid teal;
       border-radius: 300px;
       width: 25%; 
@@ -123,9 +123,9 @@ input[type=text], select {
     /* color: white; */
     /* width: 230px; */
     height: 50px;
-    float: right;
     border: 0;
     border-radius: 3px;
    margin-top: -30px;
     font-size: 25px;
+    margin-left: 160px;
   }

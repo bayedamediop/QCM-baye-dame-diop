@@ -32,10 +32,10 @@ $p=isset($_GET['p'])?$_GET['p']:"";
               <?=  $_SESSION['user']['prenom'] ;?>
                 </div>
                 <div class="lists">
-                <a href=" ?p=liste-question" class="conte1" id="conte1">Liste Questions </a><br>
-         <a href=" ?p=inscrireAdmin" class="conte1" id="conte1" >Creer Admin</a><br>
-            <a href=" ?p=liste_joueuer" class="conte1" id="conte1" >Liste joueurs</a><br>
-            <a href=" ?p=creer_qustion" class="conte1"id="conte1" >Creer Questions</a><br>
+                <a href=" ?p=liste_qustion" class="conte1" id="conte1">Liste Questions </a><img src="../asset/images/Icônes/ic-liste.png" alt="" class=""><br>
+         <a href=" ?p=inscrireAdmin" class="conte1" id="conte1" >Creer Admin</a><img src="../asset/images/Icônes/ic-ajout.png" alt="" class="d1"><br>
+            <a href=" ?p=liste_joueuer" class="conte1" id="conte1" >Liste joueurs</a><img src="../asset/images/Icônes/ic-liste.png" alt="" class="d1"><br>
+            <a href=" ?p=creer_qustion" class="conte1"id="conte1" >Creer Questions</a><img src="../asset/images/Icônes/ic-ajout.png" alt="" class="d1"><br>
                 </div>
             </div>
             <div class="contenue">
@@ -46,6 +46,10 @@ $p=isset($_GET['p'])?$_GET['p']:"";
         </div>
         
     </div>
+    
+    
+    
+    
     </div>
     </body>
 </html>
