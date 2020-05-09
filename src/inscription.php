@@ -26,61 +26,31 @@
     <div class="row row1">
         <div class="top">    
      <h1 class="h1">S’INSCRIRE</h1 >
-    <label for="prenom">PRENOM </label>
-   
-    <input type="text" id="" name="prenom" error="erreur-1" placeholder="Entre votre prenom..">
-    <div class="" id="erreur-1"></div>
+     <label for="prenom">PRENOM </label>
+    <input type="text" id="prenom" name="prenom" error="erreur-1" placeholder="Entre votre prenom..">
+     <span id="prenom_erreur"></span>
     <label for="nom">NOM</label>
-    
-    <input type="text" id="" name="nom"  error="erreur-2" placeholder="Entre votre nom..">
-    <div class="" id="erreur-2"></div> 
+    <input type="text" id="nom" name="nom"  error="erreur-2" placeholder="Entre votre nom..">
+    <span id="nom_erreur"></span>
     <label for="login">LOGIN</label>
     <input type="text" id="login" name="login" placeholder="Entre votre login..">
-    <br><span id="login_erreur"></span>
+   <span id="login_erreur"></span>
     <label for="pwd">PASSWORD</label>
     <input type="password" id="pwd" name="pwd" placeholder="Entre votre password..">
     <span id="pwd_erreur"></span>
     <label for="pwdc">CONFIRME PASSWORD</label>
     <input type="password" id="pwdc" name="pwdc" placeholder="Cofirmer votre password..">
-    <span id="pwdc_erreur"></span>
-    <h2>Avatar</h2>    
+    <span id="pwdc_erreur"></span><br>
+    <br>
+    <label for="file">Avatar</label>   
     <input type="file" id="file" class="file" name="file">
     <span id="file_erreur"></span>
     <input type="hidden" id="profile" name="profile" value="jeux"  > 
-    <button type="submit" class="submit"  name="submit">Créer compte </button>
+    <button type="submit" class="submit" id="bt_valider" name="submit">Créer compte </button>
 </div>
 </div>
      </form>
-        <script>
-        
-        // recuperration par ID du input submit (c-a-d le bouton valider)
-           document.getElementById("myform").addEventListener("submit",function(e){
-                    const inputs= document.getElementsByTagName("input");
-                  var error=false;
-                      for(input  of inputs){
-                        if(input.hasAttribute("error")){
-                              var idDivError=input.getAttribute("error")
-                           
-                           if(!input.value){
-                           
-                               var text = document.getElementById(idDivError).innerHTML ="Ce Champ est Obligatoire!!!"
-                                text.style.color="red";
-                           }
-                              error=true;
-                          }else{
-                            // document.getElementById(idDivError).innerHTML=""
-                          }
-
-                      }
-                        if(error)   {
-                            e.preventDefault();
-                        
-                        }
-
-    })
-
-       
-  </script> 
+     <script src="../asset/js/valideFormulair.js">  </script>
 </body>
 </html>
 <?php

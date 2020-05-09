@@ -1,24 +1,29 @@
 <?php
 session_start();
 require_once('src/function.php');
-
+$_SESSION['pageCourant']=1;
+$_SESSION['courantPage']=1;
 $_SESSION['user'] = [];
 if(isset($_POST['btn'])){
   
         $login=$_POST['login'];
         $pwd=$_POST['pwd'];
-  $result=connection($login,$pwd);
+      if( $result=connection($login,$pwd)){
 
-    if($result=="admin"){
-        $_SESSION['user']=user($login,$pwd);
+          if($result=="admin"){
+             $_SESSION['user']=user($login,$pwd);
        
-       header("location:src/admin.php");
-    } 
-    if($result=="jeux"){
-        $_SESSION['user']=user($login,$pwd);
-        header("location:src/jeux.php");
-     }
-}
+                    header("location:src/admin.php");
+             } 
+              if($result=="jeux"){
+                        $_SESSION['user']=user($login,$pwd);
+                        header("location:src/jeux.php");
+                    }
+       }else{
+             echo "votre login est incorrecte!!";
+             header("location:index.php");
+      }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,10 +67,33 @@ if(isset($_POST['btn'])){
 </div>
 
 <script src="asset/js/scrpit.js">  </script>
-<script src="asset/js/vlideCon.js">  </script>
+<script> 
+var btn_valider = document.getElementById('btn_valider');
+
+// ecoute du bouton si on a clicke ou pas 
+btn_valider.addEventListener('click',fomrValide);
+var login = document.getElementById('login');
+var login_erreur = document.getElementById('login_erreur');
+
+// recuperration par ID du input prenom
+var pwd = document.getElementById('pwd');
+var pwd_erreur = document.getElementById('pwd_erreur');
+// fonctions qui verifie si nos champ son valide ou pas 
+function fomrValide(e){
+   
+    if(login.value==""){
+        alert("oki");
+    die();
+        e.preventDefault();
+        login_erreur.innerHTML="Vous n'est pas saisie le champ de login!!!!";
+        login_erreur.style.color="red";
+    }if(pwd.value==""){
+        e.preventDefault();
+        pwd_erreur.innerHTML="Vous n'est pas saisie le champ de password!!!!";
+        pwd_erreur.style.color="red";
+    }
+}
+</script>
 
 </body>
 </html>
-<?php
-  
-?>

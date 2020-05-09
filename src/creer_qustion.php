@@ -1,5 +1,30 @@
 
 <?php 
+require_once('function.php');
+//  session_start();
+ $nouveau=[];
+ if (isset($_POST['submit'])){
+
+   $qustion=$_POST['question'];
+   $score=$_POST['score'];
+   $type=$_POST['type'];
+   $reponse=$_POST['rep'];
+   $vrais=$_POST['vrais'];
+   $nouveauQuestion=[
+       'Question'=>$qustion,
+       'Score'=>$score,
+       'type'=>$type,
+       'Reponse'=>$reponse,
+        'Varais'=>$vrais
+      
+   ];
+         $json=file_get_contents('../asset/json/question.json');
+         $nouveau=json_decode($json,true);
+         $nouveau[]=$nouveauQuestion;
+         $nouveauEncode=json_encode($nouveau);
+        file_put_contents('../asset/json/question.json',$nouveauEncode);
+   
+    }
 
 ?>
 <!DOCTYPE html>
@@ -23,9 +48,17 @@
       <div class="col-75">
         <textarea id="question" name="question" style="height:100px"></textarea>
       </div>
+      </div>
+      <div class="row">
+      <div class="col-25">
+        <label for="Score">Score</label>
+      </div>
+      <div class="col-75">
+        <input  type="number" id="score" name="score" style="height:20px">
+      </div>
+      </div>
 
    <div id="inputs" >
-   
     <div class="row">
       <div class="col-25">
         <label for="type">Type</label>
@@ -58,27 +91,9 @@
                   </div>
                   </div>
            <script type="text/javascript">
-            //  select=document.getElementById("typ");
-            //  select.addEventListener("change",function(e){
-            //   document.getElementById ("row").style.display="block";
-            //    console.log(e);
-            //    var choix=document.getElementById ("choix");
-            //    choix.innerHtml="";
-            //    if(e.target.options.selectedIndex==2)
-            //   { var newInput= document.createElement("inputs");
-            //    newInput.setAttribute('type','textarea');
-            //    newInput.setAttribute('placeholder', 'REPONSE');
-            //    newInput.setAttribute('name','rep[]');
-            //    newInput.setAttribute('name','vrais');
-            //    choix.appendChild(newInput);
-              //  newInput.style.cols="30";
-              //  newInput2.style.row="200px";
-               
-              
-            //   }
-            //  });
+           
                 var i=0;
-             function genere(){
+             function genere(divName ){
                
              var choix=document.getElementById ("choix");
              choix.innerHtml="";
@@ -88,85 +103,97 @@
               
              //choixmultiple
              
-              if(typ==='choixmultiple'){
+              // if(typ==='choixmultiple'){
                
-                var newInput = document.createElement('div');
-                newInput.innerHTML = `
-                     
-                      <label >Réponse\" + i\"</label>
-                   <input type="text" name=\"reponse"+i+ >
-                   <input type="checkbox">
-                    <button type="button" onClick=suprimer();\">
-                      <img src="../asset/Images/icone/ic-supprimer.png"alt="">
-                      </button>
-                      `;
-
-              //  var newInput= document.createElement("input");
-              //  var newInput2= document.createElement("input");
-              //  var newInput3= document.createElement("input");
-              //  var newInput4= document.createElement("input");
-              //  newInput.setAttribute('type','text');
-              //  newInput2.setAttribute('type','checkbox');
-              //  newInput3.setAttribute('type','hidden');
-              //  newInput4.setAttribute('type','text');
-              //  newInput.setAttribute('name','rep');
-              //  newInput2.setAttribute('name','vrais');
-              //  newInput3.setAttribute('name','vrais');
-              //  newInput3.setAttribute('value','off');
-              //  newInput.setAttribute('placeholder', 'REPONSE');
-              //  newInput4.setAttribute('placeholder','ajout');
-               newInput.style.width="85%";
-              //  newInput2.style.width="10%";
-                    divInputs.appendChild(newInput);
-              //  choix.appendChild(newInput3);
-              // divInputs.appendChild(newInput2);
-              i ++;
-              }
-                   
-             if(typ==="choixsimple"){
-                //choixsimple
-                var newInput = document.createElement('div');
-                newInput.innerHTML = `
-                      <input type="text">
-                      <input type="radio">
-                      <button type="button">
-                      <img src="../asset/Images/icone/ic-supprimer.png"alt="">
-                      </button>
-                      `;
-              //  newInput.setAttribute('name','rep');
-              //  newInput2.setAttribute('name','vrais');
-              // //  newInput2.setAttribute('value');
-              //  newInput.setAttribute('placeholder', 'REPONSE');
-              //  newInput.style.width="100%";
-              //  newInput2.style.width="10%";
-              //  newInput.addEventListener('change',function(e){
-              //    newInput2.value=e.target.value;
-              //  })
-              divInputs.appendChild(newInput);    
-              
-              }
-              // if(typ=="choixtext"){
-              //   var newInput= document.createElement("input");
-              //  var newInput= document.createElement('type','textarea');
-              //  newInput.setAttribute('type','textarea');
-              //  newInput.setAttribute('placeholder', 'REPONSE');
-              //  newInput.setAttribute('name','rep[]=""');
-              //  newInput.setAttribute('name','vrais');
-              //  choix.appendChild(newInput);
-              //  newInput.style.width="85%";
-              //  newInput2.style.row="200px";
-                        
+                // var newInput = document.createElement('div');
+                var champ = "champ" + i;
+        var newdiv = document.createElement('div');
+        var valeur = document.getElementById('typ').value;
+        if (typ === "choixmultiple") {
+            newdiv.innerHTML = "<div id=\"champ" + i + "\" class=\"nbQuestionNew\">" +
+                "<label class=\"label\" for=\"reponse" + i + "\">Réponse" + i + "</label>" +
+                "<input class=\"labelReponse\" type=\"text\" name=\"rep[]\" >" +
+                " <input type=\"checkbox\" name=\"vrais[]\"> " +
+                
+                " <button class=\"delete\" onClick=\"suprimer('champ" + i + "');\">"+
+                " <img src=\"../asset/Images/icone/ic-supprimer.png\">"+
+                "</button> </div>";
+            divInputs.appendChild(newdiv);
+            // increment(i)
+            i++
+        } else if (typ === "choixsimple") {
+            i = 1;
+            newdiv.innerHTML = "<div id=\"champ" + i + "\" class=\"nbQuestionNew\">" +
+                "<label class=\"label\" for=\"typeReponse" + i + "\">Réponse" + i + "</label>" +
+                "<input class=\"labelReponse\" type=\"text\" name=\"rep[]\" >" +
+                "<input  class=\"radio\" type=\"radio\" name= \"vrais[]\" >" +
+                " <button class=\"delete\" onClick=\"suprimer('champ" + i + "');\">"+
+                " <img src=\"../asset/Images/icone/ic-supprimer.png\">"+
+              " </button> </div>";
+                divInputs.appendChild(newdiv);
+            // increment(i)
+            i++
+        } else if (typ === "choixtext") {
+            if (i <= 1) {
+                newdiv.innerHTML = "<div id=\"champ" + i + "\" class=\"nbQuestionNew\">" +
+                    "<label class=\"label\" for=\"reponse \">Réponse</label>" +
+                    "<textarea  class=\"area\" name=\"rep\"></textarea>" +
+                    // " <button class=\"delete\" onClick=\"suprimer('champ" + i + "');\"></button> </div>";
+                    divInputs.appendChild(newdiv);
+                // increment()
+            }
+        } else {
+            alert('le type de réponse est obligatoire  ');
+        }
+    }
               // }
-              if(typ==="choixtext"){
-                //choixsimple
-                var newInput = document.createElement('div');
-                var newInput= document.createElement("inputs");
-               newInput.setAttribute('type','textarea');
-               newInput.setAttribute('placeholder', 'REPONSE');
-                      divInputs.appendChild(newInput);  
-                      newInput.style.cols="30";  
-            }
-            }
+                   
+            //  if(typ==="choixsimple"){
+            //     //choixsimple
+            //     var newInput = document.createElement('div');
+            //     newInput.innerHTML = `
+            //           <input type="text" name="reponse[]>
+            //           <input type="radio">
+            //           <input type="hidden" name=\"vrais[]"  >
+            //           <button type="button">
+
+            //           <img src="../asset/Images/icone/ic-supprimer.png"alt="">
+            //           </button>
+            //           `;
+            //   //  newInput.setAttribute('name','rep');
+            //   //  newInput2.setAttribute('name','vrais');
+            //   // //  newInput2.setAttribute('value');
+            //   //  newInput.setAttribute('placeholder', 'REPONSE');
+            //   //  newInput.style.width="100%";
+            //   //  newInput2.style.width="10%";
+            //   //  newInput.addEventListener('change',function(e){
+            //   //    newInput2.value=e.target.value;
+            //   //  })
+            //   divInputs.appendChild(newInput);    
+              
+            //   }
+            //   // if(typ=="choixtext"){
+            //   //   var newInput= document.createElement("input");
+            //   //  var newInput= document.createElement('type','textarea');
+            //   //  newInput.setAttribute('type','textarea');
+            //   //  newInput.setAttribute('placeholder', 'REPONSE');
+            //   //  newInput.setAttribute('name','rep[]=""');
+            //   //  newInput.setAttribute('name','vrais');
+            //   //  choix.appendChild(newInput);
+            //   //  newInput.style.width="85%";
+            //   //  newInput2.style.row="200px";
+                        
+            //   // }
+            //   if(typ==="choixtext"){
+            //     //choixsimple
+            //     var newInput = document.createElement('div');
+            //     var newInput= document.createElement("inputs");
+            //    newInput.setAttribute('type','textarea');
+            //    newInput.setAttribute('placeholder', 'REPONSE');
+            //           divInputs.appendChild(newInput);  
+            //           newInput.style.cols="30";  
+            // }
+            // }
             
            </script>     
 </body>

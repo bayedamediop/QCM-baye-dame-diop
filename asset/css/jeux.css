@@ -31,17 +31,41 @@
     height: 60px;
     /* margin: 0.5% 0.5% 0.5%  ; */
     background-color: rgb(91, 202, 230);
+
 }
 .p{
     text-align: center;
-    /* padding: 10px; */
+    padding: 10px;
     color: white;
 }
 .cuntenu2{
     float: left;
     width: 99%;
-    background-color: rgb(237, 242, 243);
+    background-color: rgb(92, 93, 94);
     /* height: 560px; */
+
+}
+.cuntenu3{
+    float: left;
+    width: 98%;
+    background-color: white;
+    /* height: 560px; */
+    margin: 0.5% 0.5% 0.5%  ;
+    margin-left: 9px;
+}
+.rep{
+    float: left;
+    width: 50%;
+    border: solid 5px cadetblue;
+    /* height: 100px; */
+    margin: 1% 1% 1% 
+    /* background-color:cadetblue; */
+}
+.reps{
+    float: left;
+    width: 70%;
+    margin-left: 100px; 
+    /* background-color: blue; */
 }
 .cuntenu2 .menu{
     float: left;
@@ -50,15 +74,15 @@
     margin-top: 30px;
     margin-left: 10px;
     border-radius: 10px;
-
     /* margin: 0% 0.5% 0.5% 0.5% ; */
     background-color: white;
+
 }
 .cuntenu2 .menu .im{
     float: left;
     width: 100%;
     height: 130px;
-   background-color: rgb(7, 170, 211);
+   background-color: rgb(91, 194, 219);
 }
 .cuntenu2 .menu .im .logo{
     
@@ -104,22 +128,9 @@
 
 .pagination{
     float: right;
-    width: 100px;
-      height: 40px;
-      font-size: 20px;
+    margin:1% 1% 1% 1% ;
     background-color: rgb(91, 202, 230);
-   
-    border-color: rgb(91, 202, 230);
-
-}
-.paginations{
-
-    /* margin:1% 1% 1% 1% ; */
-    width: 100px;
-      height: 40px;
-      font-size: 20px;
-    background-color: rgb(91, 202, 230);
-   
+    height: 30px;
     border-color: rgb(91, 202, 230);
 
 }

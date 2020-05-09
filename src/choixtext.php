@@ -1,18 +1,26 @@
 <?php
-echo "text";
-die();
-        //$reponses=$question['rep'];
-        //shuffle($reponses);
-?>
-<link rel="stylesheet" href="choix.css">
-    <h2 style="text-align:center">
-         <?=$question['question']?>
-         </h2>
-        <h1 style="text-align:center">nombre de points :<?=$question['score']?>pts</h1>
-       
-        <input type="hidden" name="vrais" value="<?=$question['vrais']?>">    
+
+          $question=$_SESSION['question'];
          
-               <input type="text" name="rep" style="">            
+        //  $score=$_SESSION['Score'];
+        $reponses=$_SESSION['reponse'];
+        // var_dump($reponses);
+        // die();
+          
+         
+  ?>
+
+   <link rel="stylesheet" href="choix.css"> 
+   <h2 style="text-align:center;  background-color:rgb(145, 141, 141); height: 60px;" >
+   <?="QUESTION ".$_SESSION['cpt'].'/'.$_SESSION['limites']."<br>"?>
+          <?=$question?>
+
+           </h2>
+        <h1 style="text-align:center">nombre de points :<?= $score?>pts</h1>
+       
+        <input type="hidden" name="vrais" value="<?=$reponses['Varais']?>">    
+         
+               <input type="text" name="rep">             
              
 
        

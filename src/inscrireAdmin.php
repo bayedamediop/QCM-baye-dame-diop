@@ -57,19 +57,20 @@
  if (isset($_POST['submit']) && isset($_FILES['file'])){
      unset($_POST['submit']);
 // var_dump($_POST);
-
    $prenom=$_POST['prenom'];
    $nom=$_POST['nom'];
+   $login=$_POST['login'];
    $pwd=$_POST['pwd'];
    $pwdc=$_POST['pwdc'];
+   //uploade image
+//        
    $file=$_FILES['file'];
-    //    $file_tmp=$_FILES['file']['tmp-name'];
-    //     $uploade="../asset/images/uploade_images";
-    //    $file= move_uploaded_file($file_tmp,$uploade);
+       uploadeImage($file,$login);
    $profile=$_POST['profile'];
    $nouveauQuestion=[
        'prenom'=>$prenom,
        'nom'=>$nom,
+       'login'=>$login,
        'pwd'=>$pwd,
        'pwdc'=>$pwdc,
        'file'=>$file,

@@ -1,36 +1,30 @@
 <?php
-
-session_start();
-echo "multiple";
-$reponses=$_SESSION['multiple'];
-$question=($reponses['Reponse']);
-// $question=($reponses['Varais']);
-
-// var_dump($question);
-echo"<br>";
-var_dump($question);
-// for ($i=0; $i< count($reponses); $i++) { 
-//   echo $reponses[$i];
-// }
-$k=0;
+// session_start();
+          $question=$_SESSION['question'];
+          // $score=$_SESSION['Score'];
+          $reponses=$_SESSION['reponse'];
+          // var_dump($reponses);
+          // die();
+          $jsons = file_get_contents('../asset/json/question.json');
+        $jsons = json_decode($jsons, true);
+        // shuffle($reponses);
 ?>
 <link rel="stylesheet" href="choix.css">
-    <h2 style="text-align:center">
-         <?=$reponses['Question']?>
+<h2 style="text-align:center;  background-color:rgb(145, 141, 141); height: 60px;" >
+<?="QUESTION ".$_SESSION['cpt'].'/'.$_SESSION['limites']."<br>"?>
+          <?=$question?>
          </h2>
 
-        <h1 style="text-align:center">nombre de points :<?=$reponses['Score']?>pts</h1>
-       
+        <!-- <h1 style="text-align:center">nombre de points :<?= $score?>pts</h1> -->
+        
                     
-          <?php foreach ($question as  $reponse): ?>
-         
-         <div>
-                <h1 style="margin-left: 437px;"> REP  <?=$k+1 ?> :
-                <?=$reponse?>  </h1> 
-               <!-- <input type="hidden" name="rep" value="<?=$reponse?>" style="float:right">             -->
-               <input type="checkbox" name="rep"  style="margin-left:737px;" >      </div>      
-               <!-- <input type="hidden" name="vrais[]" value="<?=$reponse['vrais']?>"> -->
-               
+          <?php foreach ($reponses as $k=> $reponse): ?>
+                <h1> REP  <?=$k+1 ?> :
+               <!-- <?= $reponse['Reponse']?></h1>  -->
+               <input type="hidden" value="off" name="rep[<?=$k?>]" style="float:right">            
+               <input type="checkbox" name="rep[<?=$k?>]" style="float:right">            
+               <input type="hidden" name="vrais[]" value="<?=$reponse['Varais']?>">
+
          <?php endforeach;?>
 
 
